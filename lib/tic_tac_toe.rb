@@ -29,6 +29,7 @@ def valid_move?(board, index)
       true
     end
   end
+end
 
 
 def turn(board)
@@ -110,6 +111,5 @@ def winner(board)
    position_2 = board[win_index_2]
    position_3 = board[win_index_3]
    return position_1
- end
  end
 end
