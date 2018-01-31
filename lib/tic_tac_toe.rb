@@ -50,7 +50,6 @@ def turn(board)
   position = input_to_index(choice)
   if (!position_taken?(board, position) && valid_move?(board, position))
     move(board, position, player = "X")
-    turn(board)
     #display_board(board)
   else
     turn(board)
