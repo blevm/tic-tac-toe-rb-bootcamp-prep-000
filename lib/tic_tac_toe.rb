@@ -48,9 +48,9 @@ end
 def play(board)
   turns = 0
   if won?(board)
-    return winner(board)
+    "Congratulations #{winner(board)}"
   elsif draw?(board)
-    puts "It's a draw!"
+    puts "Cat's Game!"
   else
     until over?(board)
       turn(board)
@@ -58,6 +58,7 @@ def play(board)
     end
   end
 end
+
 
 def turn_count(board)
   turn_counter = 0
