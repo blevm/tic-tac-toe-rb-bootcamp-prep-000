@@ -48,7 +48,7 @@ end
 def play(board)
   turns = 0
   if won?(board)
-    winner(board)
+    puts "Congratulations #{winner(board)}"
   elsif draw?(board)
     puts "Cat's Game!"
   else
@@ -137,6 +137,6 @@ def winner(board)
    position_1 = board[win_index_1]
    position_2 = board[win_index_2]
    position_3 = board[win_index_3]
-   return "Congratulations #{position_1}"
+   return position_1
  end
 end
