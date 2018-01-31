@@ -13,21 +13,8 @@ def input_to_index(x)
 end
 
 
-def move(board, position, player)
-  def update_array_at_with(array, index, value)
-    array[index] = value
-  end
-  update_array_at_with(board, position, player)
-  display_board(board)
-end
-
-
-def valid_move?(board, index)
- if (!position_taken?(board, index) && index.between?(0,8))
-   return true
- else
-   return false
- end
+def move(board, index, current_player)
+  board[index] = current_player
 end
 
 
@@ -35,22 +22,19 @@ def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
 
-def move(board, position, player = "X")
-  def update_array_at_with(array, index, value)
-    array[index] = value
-  end
-  update_array_at_with(board, position, player)
-  display_board(board)
+
+def valid_move?(board, index)
+  index.between?(0,8) && !position_taken?(board, index)
 end
 
 
 def turn(board)
   puts "Please enter 1-9:"
-  choice = gets.strip
-  position = input_to_index(choice)
-  if (!position_taken?(board, position) && valid_move?(board, position))
-    move(board, position, player = "X")
-    #display_board(board)
+  input = gets.strip
+  position = input_to_index(input)
+  if valid_move?(board, index)
+    move(board, index, current_player)
+    display_board(board)
   else
     turn(board)
   end
