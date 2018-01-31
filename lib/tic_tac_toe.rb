@@ -129,12 +129,14 @@ def over?(board)
 end
 
 def winner(board)
-  win_index_1 = won?(board)[0]
-  win_index_2 = won?(board)[1]
-  win_index_3 = won?(board)[2]
+ if won?(board)
+   win_index_1 = won?(board)[0]
+   win_index_2 = won?(board)[1]
+   win_index_3 = won?(board)[2]
 
-  position_1 = board[win_index_1]
-  position_2 = board[win_index_2]
-  position_3 = board[win_index_3]
-  return position_1
+   position_1 = board[win_index_1]
+   position_2 = board[win_index_2]
+   position_3 = board[win_index_3]
+   return "Congratulations #{position_1}"
+ end
 end
