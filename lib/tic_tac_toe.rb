@@ -47,12 +47,12 @@ end
 
 def play(board)
   turns = 0
-  if won?(board)
-    "Congratulations #{winner(board)}"
-  elsif draw?(board)
-    puts "Cat's Game!"
-  else
-    until over?(board)
+  until over?(board)
+    if won?(board)
+      "Congratulations #{winner(board)}"
+    elsif draw?(board)
+      puts "Cat's Game!"
+    else
       turn(board)
       turns += 1
     end
