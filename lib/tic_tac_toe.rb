@@ -40,6 +40,13 @@ def turn(board)
   end
 end
 
+def play(board)
+  turns = 0
+  while turns <= 8
+    turn(board)
+    turns += 1
+  end
+end
 
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [
