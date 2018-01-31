@@ -43,6 +43,7 @@ def turn(board)
   end
 end
 
+
 def play(board)
   turns = 0
   while turns <= 8
@@ -52,16 +53,16 @@ def play(board)
 end
 
 # Define your WIN_COMBINATIONS constant
-WIN_COMBINATIONS = [
-  [0,1,2],
-  [3,4,5],
-  [6,7,8],
-  [0,3,6],
-  [1,4,7],
-  [2,5,8],
-  [0,4,8],
-  [6,4,2]
-]
+#WIN_COMBINATIONS = [
+#  [0,1,2],
+#  [3,4,5],
+#  [6,7,8],
+#  [0,3,6],
+#  [1,4,7],
+#  [2,5,8],
+#  [0,4,8],
+#  [6,4,2]
+#]
 
 def won?(board)
   WIN_COMBINATIONS.any? do |win_combination|
@@ -109,5 +110,6 @@ def winner(board)
    position_2 = board[win_index_2]
    position_3 = board[win_index_3]
    return position_1
+ end
  end
 end
