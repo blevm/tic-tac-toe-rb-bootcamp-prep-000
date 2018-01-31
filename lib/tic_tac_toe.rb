@@ -47,9 +47,15 @@ end
 
 def play(board)
   turns = 0
-  while turns <= 8
-    turn(board)
-    turns += 1
+  if won?(board)
+    return winner(board)
+  elsif draw?(board)
+    puts "It's a draw!"
+  else
+    until over?(board)
+      turn(board)
+      turns += 1
+    end
   end
 end
 
