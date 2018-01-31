@@ -13,7 +13,7 @@ def input_to_index(x)
 end
 
 
-def move(board, position, player = "X")
+def move(board, position, player)
   def update_array_at_with(array, index, value)
     array[index] = value
   end
