@@ -48,9 +48,9 @@ end
 def play(board)
   turns = 0
   if won?(board)
-    "Congratulations #{winner(board)}"
+    puts "Congratulations #{winner(board)}"
   elsif draw?(board)
-    "Cat's Game!"
+    puts "Cat's Game!"
   else
     until over?(board)
       turn(board)
@@ -129,14 +129,12 @@ def over?(board)
 end
 
 def winner(board)
- if won?(board)
-   win_index_1 = won?(board)[0]
-   win_index_2 = won?(board)[1]
-   win_index_3 = won?(board)[2]
+  win_index_1 = won?(board)[0]
+  win_index_2 = won?(board)[1]
+  win_index_3 = won?(board)[2]
 
-   position_1 = board[win_index_1]
-   position_2 = board[win_index_2]
-   position_3 = board[win_index_3]
-   return position_1
- end
+  position_1 = board[win_index_1]
+  position_2 = board[win_index_2]
+  position_3 = board[win_index_3]
+  return position_1
 end
